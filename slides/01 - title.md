@@ -1,4 +1,4 @@
-### Les concepts au cœur des manifestes IIIF et leur présentation sur le web.
+### La formalisation des manifestes IIIF
 
 Collaboratoire n°3 - IIIF et digital storytelling
 
