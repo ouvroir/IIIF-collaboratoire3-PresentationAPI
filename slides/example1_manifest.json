@@ -1,0 +1,27 @@
+{
+  "@context": "http://example.com/book",
+  "id": "identifiant",
+  "type": "Manifest",
+
+  "metadata": [],
+  "summary": [],
+  "requiredStatements": [],
+  "rights": [],
+  "provider": [],
+  "thumbnail": [],
+
+  "width": 300,
+  "height": 300,
+  "duration": 300,
+  "viewing-direction": "right-to-left",
+  "behavior": "continuous | paged",
+
+  "homepage": [],
+  "logo": [],
+  "rendering": [],
+  "service": [],
+  "seeAlso": [],
+
+  "partOf": [],
+  "start": []
+}

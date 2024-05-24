@@ -1,40 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="slides/styles.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/github.css" />
+  </head>
+  <body>
+    <div id="elapsed-time"></div>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="slides/01 - title.md"
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Note:"
+        ></section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <section
+          class="small"
+          data-markdown="slides/02 - plan.md"
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Note:"
+        ></section>
+        <section
+          class="small"
+          data-markdown="slides/02.1 - avertissement.md"
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Note:"
+        ></section>
+        <section>
+          <section
+            data-markdown="slides/03.0 - structure.html"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          ></section>
+          <section
+            data-markdown="slides/03.1 - structure.html"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          ></section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+          <section
+            data-markdown="slides/03.2 - structure.html"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          ></section>
+          <section>
+            <h3>Structure globale d'un Manifest</h3>
+            <div class="column">
+              <div>
+                <p class="small">
+                  <strong>Métadonnées descriptives</strong>
+                </p>
+                <pre>
+						<code>
+							{
+								// Métadonnées techniques
+								"@context": "http://example.com/book/context.json",
+								"id": "identifiant",
+								"type": "Manifest",
+								
+								// Métadonnées descriptives
+								"metadata": [
+									{
+										"label": { "en": ["Author"] },
+										"value": { "none": ["Anne Author"] }
+									},
+								],
+								"summary": { "fr": "Description de la ressource" },
+								"requiredStatements": [],
+								"rights": [],
+								"provider": [],
+								"thumbnail": [],
+								
+								// ...
+							}
+						</code>
+					</pre>
+              </div>
+              <div>
+                <img
+                  src="slides/03_img1 - structure.png"
+                  alt="Structure globale d'un manifeste IIIF"
+                  h
+                />
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>Structure globale d'un Manifest</h3>
+            <div class="column">
+              <div>
+                <p class="small">
+                  <strong>Métadonnées techniques</strong>
+                </p>
+                <pre>
+						<code>
+							{
+								// Métadonnées techniques
+								"@context": "http://example.com/book/context.json",
+								"id": "identifiant",
+								"type": "Manifest",
+								
+								// Plus de métadonnées techniques
+								"width": 300,
+								"height": 300,
+								"language": [],
+								"duration": 300,
+								"viewing-direction": "right-to-left",
+								"behavior": "continuous | paged",
+
+								// Métadonnées descriptives
+								// ...
+							}
+						</code>
+					</pre>
+              </div>
+              <div>
+                <img
+                  src="slides/03_img1 - structure.png"
+                  alt="Structure globale d'un manifeste IIIF"
+                  h
+                />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Structure globale d'un Manifest</h3>
+            <div class="column">
+              <div>
+                <p class="small">
+                  <strong
+                    >Liens vers des ressources externes et internes</strong
+                  >
+                </p>
+                <pre>
+						<code>
+							{
+								// Liens vers des ressources externes
+								"@context": "http://example.com/book/context.json",
+								"id": "identifiant",
+								"type": "Manifest",
+								
+								// Liens vers des ressources externes et internes
+								"homepage": [],
+								"logo": [],
+								"rendering": [],
+								"service": [],
+								"seeAlso": [],
+
+								"partOf": [],
+								"start": [],
+
+								// Métadonnées descriptives et techniques
+								// ...
+							}
+						</code>
+					</pre>
+              </div>
+              <div>
+                <img
+                  src="slides/03_img1 - structure.png"
+                  alt="Structure globale d'un manifeste IIIF"
+                  h
+                />
+              </div>
+            </div>
+          </section>
+          <section
+            data-markdown="slides/03.2 - structure.html"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          ></section>
+        </section>
+        <section
+          class="small left"
+          data-markdown="slides/04 - canvas.md"
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Note:"
+        ></section>
+        <section>
+          <h4>Sequence et métadonnées de structure</h4>
+          <div class="column-3-1">
+            <div class="small">
+              <pre><code class="indent">
+    {
+        "@context": "http://example.com/book",
+        "id": "identifiant",
+        "type": "Manifest",
+      
+        // Métadonnées descriptives, techniques et liens
+        ...
+
+        // Liste (ou Sequence) de Canvas
+        "items": [
+				{
+					"id": "https://example.com/..."
+					"type": "Canvas"
+
+						// Liste d'AnnotationPages
+						"items": [
+							{
+								"id": "https://example.com/.../.../..."
+								"type": "AnnotationPage"
+
+								// Liste d'Annotations
+								items: [
+									{
+										"id": "https://example.com/.../.../..."
+										"type": "Annotation"
+										 
+									}
+								]
+							}
+						],
+					
+				},
+        ]
+    }
+    </code></pre>
+            </div>
+
+            <img
+              src="slides/03_img1 - structure.png"
+              alt="Structure globale d'un manifeste IIIF"
+              h
+            />
+          </div>
+        </section>
+        <section>
+          <section>
+            <p>
+              Tous les contenus sont des <strong>Annotations</strong> que l'on
+              peut regrouper dans des <strong>AnnotationPages</strong>.
+            </p>
+          </section>
+          <section>
+            <div class="column-1-3">
+              <div class="left">
+                <p class="x-small">Web Annotation</p>
+                <p class="xx-small">
+                  Une <strong>Web Annotation</strong> décrit un modèle structuré
+                  et un format permettant de partager et de réutiliser des
+                  annotations sur différentes plateformes matérielles et
+                  logicielles. Les cas d'utilisation courants peuvent être
+                  modélisés de manière simple et pratique, tout en permettant en
+                  même temps de répondre à des exigences plus complexes,
+                  notamment la liaison de contenu arbitraire à un point de
+                  données spécifique ou à des segments de ressources multimédias
+                  chronométrées.
+                  <br />
+                  <i
+                    ><a href="https://www.w3.org/TR/annotation-model/"
+                      >https://www.w3.org/TR/annotation-model/</a
+                    ></i
+                  >
+                </p>
+              </div>
+              <div>
+                <figure>
+                  <img
+                    src="slides/06-annotations.png"
+                    alt="Représentation d'un"
+                  />
+                  <figcaption>
+                    <a
+                      href="https://doc.biblissima.fr/formation-iiif/api-presentation/#contenu"
+                      >https://doc.biblissima.fr/formation-iiif/api-presentation/#contenu</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <h3>... de Grâce, quelques exemples !</h3>
+        </section>
+        <section>
+          <h3>On cherche à décrire une série</h3>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+
+      var startTime = null; // Start time of the presentation
+
+      // Function to update elapsed time display
+      function updateElapsedTime() {
+        if (startTime !== null) {
+          var currentTime = new Date().getTime();
+          var elapsedTime = currentTime - startTime;
+          var seconds = Math.floor(elapsedTime / 1000);
+          var minutes = Math.floor(seconds / 60);
+          seconds = seconds % 60;
+          document.getElementById("elapsed-time").innerText =
+            minutes + " : " + seconds;
+        }
+      }
+
+      // Event listener to start capturing time on second slide
+      Reveal.addEventListener("slidechanged", function (event) {
+        if (event.indexh === 1) {
+          // Check if the second slide is displayed
+          startTime = new Date().getTime(); // Capture start time
+        }
+      });
+
+      // Update elapsed time every second
+      setInterval(updateElapsedTime, 1000);
+    </script>
+  </body>
 </html>
