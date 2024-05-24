@@ -7,8 +7,14 @@ Les slides ont été produites à l'aide de [revealjs.com](https://revealjs.com/
 
 ### Utilisation
 
-`git clone https://github.com/ouvroir/IIIF-collaboratoire3-PresentationAPI.git && cd IIIF-collaboratoire3-PresentationAPI/`
+```bash
+git clone https://github.com/ouvroir/IIIF-collaboratoire3-PresentationAPI.git && cd IIIF-collaboratoire3-PresentationAPI/
+```
 
-`npm install`
+```bash
+npm install
+```
 
-`npm run dev`
+```bash
+npm run dev
+```
