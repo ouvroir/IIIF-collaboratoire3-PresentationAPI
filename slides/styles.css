@@ -54,6 +54,10 @@ figcaption {
   margin-left: 5rem;
 }
 
+.fit-height {
+  max-width: 50%;
+}
+
 #elapsed-time {
   position: fixed;
   bottom: 7rem;
